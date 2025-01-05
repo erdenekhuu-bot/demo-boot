@@ -1,2 +1,2 @@
 # demo-boot
-Spring boot first time
+spring-boot-first-time
