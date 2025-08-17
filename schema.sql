@@ -73,3 +73,8 @@ CREATE TABLE available_pos (
     lat VARCHAR(100),
     lon VARCHAR(100)
 );
+
+CREATE TABLE payment (
+    id SERIAL PRIMARY KEY,
+)
+
