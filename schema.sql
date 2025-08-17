@@ -1,5 +1,5 @@
 CREATE TYPE ProfileType AS ENUM ('PASSENGER', 'DRIVER');
-CREATE TYPE TransportType AS ENUM ("STARTED","ENDED")
+CREATE TYPE TransportType AS ENUM ('STARTED', 'ENDED', 'NONE');
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -44,7 +44,7 @@ CREATE TABLE transport (
     id SERIAL PRIMARY KEY,
     passenger INT,
     amount INT
-    trans 0
+    trans TransportType DEFAULT 'NONE',
     start_time
     end_time
 )
