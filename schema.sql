@@ -25,7 +25,7 @@ CREATE TABLE driver (
     license_number VARCHAR(50)
 );
 
-CREATE TABLE CarKind (
+CREATE TABLE carKind (
     id SERIAL PRIMARY KEY,
     kind VARCHAR(100),
     mark VARCHAR(255)
@@ -76,5 +76,6 @@ CREATE TABLE available_pos (
 
 CREATE TABLE payment (
     id SERIAL PRIMARY KEY,
+    kind INT
 )
 

@@ -1,28 +1,26 @@
 package mn.erdenee.course.demo.Controller;
 
-
-import mn.erdenee.course.demo.Model.User;
+import mn.erdenee.course.demo.Model.Users;
 import mn.erdenee.course.demo.Service.UserService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class AllController {
+public class APIController {
     private final UserService user;
 
-    private AllController(UserService service){
+    private APIController(UserService service){
         this.user=service;
     }
 
     @GetMapping
-    public List<User> getAllUsers(){
+    public List<Users> getAllUsers(){
         return user.getAllUsers();
     }
 
     @PostMapping
-    public User create(@RequestBody User body){
+    public Users create(@RequestBody Users body){
         return user.createUser(body);
     }
 }

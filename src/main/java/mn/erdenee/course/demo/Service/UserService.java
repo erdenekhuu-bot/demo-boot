@@ -1,6 +1,6 @@
 package mn.erdenee.course.demo.Service;
 
-import mn.erdenee.course.demo.Model.User;
+import mn.erdenee.course.demo.Model.Users;
 import mn.erdenee.course.demo.Repo.UserRepo;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +15,15 @@ public class UserService {
         this.repo = repo;
     }
 
-    public List<User> getAllUsers(){
+    public List<Users> getAllUsers(){
         return repo.findAll();
     }
 
-    public Optional<User> getUserById(Long id){
+    public Optional<Users> getUserById(Long id){
         return repo.findById(id);
     }
 
-    public User createUser(User user){
+    public Users createUser(Users user){
         return repo.save(user);
     }
 
