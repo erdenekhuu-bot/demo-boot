@@ -21,7 +21,6 @@ public class Distance {
     @Column(name = "end_time")
     private LocalDateTime endTime;
 
-    @ManyToMany
-    private SetM<>
+
 
 }
