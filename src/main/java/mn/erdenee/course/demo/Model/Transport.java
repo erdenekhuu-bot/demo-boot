@@ -1,15 +1,10 @@
 package mn.erdenee.course.demo.Model;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import mn.erdenee.course.demo.Enum.TransportType;
 
 @Entity
@@ -27,6 +22,39 @@ public class Transport {
     @Enumerated(EnumType.STRING)
     private TransportType trans;
 
+
+    @ManyToMany
+    @JoinTable(
+            name="transport_distance",
+            joinColumns = @JoinColumn(name = "transport_id"),
+            inverseJoinColumns = @JoinColumn(name = "distance_id")
+    )
+
     private LocalDateTime start_time;
     private LocalDateTime end_time;
+    private Set<Distance> distances = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public int getPassenger_id() {
+        return passenger_id;
+    }
+
+    public void setPassenger_id(int passenger_id) {
+        this.passenger_id = passenger_id;
+    }
 }

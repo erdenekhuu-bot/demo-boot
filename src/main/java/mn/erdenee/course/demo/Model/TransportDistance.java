@@ -6,4 +6,5 @@ import jakarta.persistence.*;
 @Table(name = "transport_distance")
 public class TransportDistance {
 
+
 }
