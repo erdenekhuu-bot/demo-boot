@@ -1,11 +1,12 @@
 package mn.erdenee.course.demo.Service;
 
-import mn.erdenee.course.demo.Model.Users;
-import mn.erdenee.course.demo.Repo.UserRepo;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import mn.erdenee.course.demo.Model.Users;
+import mn.erdenee.course.demo.Repo.UserRepo;
 
 @Service
 public class UserService {
