@@ -24,7 +24,10 @@ public class UserService {
         return repo.findById(id);
     }
 
-    public Users createUser(Users user){
+    public Users createUser(Users user) throws Exception{
+        if(user.getPhone() == 0){
+            throw new Exception("Phone required");
+        }
         return repo.save(user);
     }
 
