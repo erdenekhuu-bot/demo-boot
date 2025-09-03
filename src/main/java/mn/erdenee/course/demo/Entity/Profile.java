@@ -1,4 +1,4 @@
-package mn.erdenee.course.demo.Model;
+package mn.erdenee.course.demo.Entity;
 
 import jakarta.persistence.*;
 
@@ -6,23 +6,32 @@ import jakarta.persistence.*;
 @Table(name = "profile")
 public class Profile {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "user_id")
+    private Long userId;
 
-    private String address;
-    private String image;
 
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_id")
     private Users user;
 
-    public Long getId() {
-        return id;
+    private String address;
+    private String image;
+
+    public Users getUser() {
+        return user;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUser(Users user) {
+        this.user = user;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getUserId() {
+        return userId;
     }
 
     public String getAddress() {

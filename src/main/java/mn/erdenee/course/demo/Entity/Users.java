@@ -1,6 +1,7 @@
-package mn.erdenee.course.demo.Model;
+package mn.erdenee.course.demo.Entity;
 
 import jakarta.persistence.*;
+import mn.erdenee.course.demo.Enum.ProfileType;
 
 @Entity
 @Table(name = "users")
@@ -9,7 +10,11 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String usertype;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "usertype")
+    private ProfileType usertype;
+
     private int phone;
 
     public Long getId() {
@@ -20,12 +25,12 @@ public class Users {
         this.id = id;
     }
 
-    public String getUsertype(){
+    public ProfileType getUsertype(){
         return usertype;
     }
 
 
-    public void setUsertype(String usertype) {
+    public void setUsertype(ProfileType usertype) {
         this.usertype = usertype;
     }
 
