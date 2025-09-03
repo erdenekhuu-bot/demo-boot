@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import mn.erdenee.course.demo.Model.Users;
+import mn.erdenee.course.demo.Entity.Users;
 import mn.erdenee.course.demo.Repo.UserRepo;
 
 @Service
