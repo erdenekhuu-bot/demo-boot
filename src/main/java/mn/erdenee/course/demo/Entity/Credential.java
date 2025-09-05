@@ -1,9 +1,6 @@
 package mn.erdenee.course.demo.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "credential")
@@ -11,6 +8,11 @@ public class Credential {
     @Id
     @Column(name = "user_id")
     private Long userId;
+
+    @OneToMany
+    @MapsId
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     @Column(name = "password_hash")
     private String password_hash;

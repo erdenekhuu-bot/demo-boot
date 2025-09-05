@@ -15,6 +15,7 @@ public class Users {
     @Column(name = "usertype")
     private ProfileType usertype;
 
+    @Column(name = "phone")
     private int phone;
 
     public Long getId() {
