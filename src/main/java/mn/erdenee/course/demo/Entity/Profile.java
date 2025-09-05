@@ -15,7 +15,10 @@ public class Profile {
     @JoinColumn(name = "user_id")
     private Users user;
 
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "image")
     private String image;
 
     public Users getUser() {
