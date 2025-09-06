@@ -25,11 +25,16 @@ public class UserService {
     }
 
     public Users createUser(Users user) throws Exception{
-        if(user.getPhone() == 0){
+        if(user.getPhone() == null){
             throw new Exception("Phone required");
         }
         return repo.save(user);
     }
+
+    public Users login(String phone){
+        return repo.findByPhone(phone);
+    }
+
 
     public void deleteUser(Long id){
         repo.deleteById(id);
