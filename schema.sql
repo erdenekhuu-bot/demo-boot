@@ -6,7 +6,7 @@ CREATE TYPE TransportType AS ENUM ('STARTED', 'ENDED', 'NONE');
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     usertype ProfileType,
-    phone BIGINT
+    phone VARCHAR(8) UNIQUE
 );
 
 CREATE TABLE profile (

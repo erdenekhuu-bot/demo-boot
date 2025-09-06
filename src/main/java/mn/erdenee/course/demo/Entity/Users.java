@@ -16,7 +16,7 @@ public class Users {
     private ProfileType usertype;
 
     @Column(name = "phone")
-    private int phone;
+    private String phone;
 
     public Long getId() {
         return id;
@@ -35,11 +35,11 @@ public class Users {
         this.usertype = usertype;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 }
